@@ -1,2 +1,17 @@
 <%- include('./partials/header') %>
+<thead>
+  <tr>
+    <th>
+      Folders
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <% folder.forEach(function(m) { %>
+    <tr>
+      <td><a href="notes/:id"><%= m.name %></a></td>
+    </tr>
+    <% }); %>
+  </tbody>
+
 <%- include('./partials/footer') %>
