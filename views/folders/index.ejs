@@ -10,7 +10,7 @@
   <button><a href="folders/new">+</a></button>
   <% folder.forEach(function(m) { %>
     <tr>
-      <br><td><a href="notes/:id"><%= m.title %></a></td>
+      <br><td><a href="folders/<%= m._id %>"><%= m.title %></a></td>
     </tr>
     <% }); %>
   </tbody>

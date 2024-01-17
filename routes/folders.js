@@ -7,6 +7,8 @@ router.get('/', ensureLoggedIn, foldersCtrl.index);
 
 router.get('/new', ensureLoggedIn, foldersCtrl.new);
 
+router.get('/:id', ensureLoggedIn, foldersCtrl.show);
+
 router.post('/', ensureLoggedIn, foldersCtrl.create);
 
 module.exports = router;

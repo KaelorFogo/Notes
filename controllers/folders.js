@@ -4,6 +4,7 @@ const Note = require('../models/note');
 module.exports = {
   index,
   new: newFolder,
+  show,
   create
 }
 
@@ -14,6 +15,11 @@ function newFolder(req,res){
 async function index(req, res){
   const folder = await Folder.find({});
   res.render('folders/index', {folder});
+}
+
+async function show(req, res){
+  const folder = await Folder.findById(req.params.id);
+  res.render('folders/show', folder);
 }
 
 async function create(req, res){
