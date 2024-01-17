@@ -1,0 +1,5 @@
+nav{
+grid-area: nav;
+display: flex;
+justify-content: flex-end;
+}
