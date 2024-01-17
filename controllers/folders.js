@@ -19,7 +19,8 @@ async function index(req, res){
 
 async function show(req, res){
   const folder = await Folder.findById(req.params.id);
-  res.render('folders/show', folder);
+  const note = await Note.find({});
+  res.render('folders/show', {folder, note});
 }
 
 async function create(req, res){

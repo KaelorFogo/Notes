@@ -1,5 +1,20 @@
 <%- include('../partials/header') %>
+<thead>
+  <h1><%= folder.title %></h1>
+</thead>
 
-<h1>TEst</h1>
+<tbody>
+  <button><a href="../notes/new">+</a></button>
+  <%if(note.length){%>
+
+  <% note.forEach(function(m) { %>
+    <tr>
+      <br><td><a href="notes/<%= m._id %>"><%= m.title %></a></td>
+    </tr>
+    <% }); %>
+    <% } else { %>
+        <p>No Notes in this folder</p>
+      <% } %>
+  </tbody>
 
 <%- include('../partials/footer') %>

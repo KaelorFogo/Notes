@@ -11,7 +11,8 @@ const folderSchemma = new Schema({
   notes: {
     type: Schema.Types.ObjectId,
     ref: 'Note'
-  }
+  },
+  userName: String
 });
 
 module.exports = mongoose.model("Folder", folderSchemma);

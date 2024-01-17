@@ -8,11 +8,15 @@
 </thead>
 <tbody>
   <button><a href="folders/new">+</a></button>
+  <%if(folder.length){%>
   <% folder.forEach(function(m) { %>
     <tr>
       <br><td><a href="folders/<%= m._id %>"><%= m.title %></a></td>
     </tr>
     <% }); %>
+    <% } else { %>
+      <p>No Folders</p>
+      <% } %>
   </tbody>
 
 <%- include('../partials/footer') %>
