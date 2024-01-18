@@ -2,10 +2,13 @@
 
 <h1>New Notes</h1>
 
-<form id="add-note-form" action="/notes/add"  method="POST" >
-  <label>Folder Name:</label>
-  <input type="text" name="title"><br>
-  <input type="submit" value="Add Note">
+<form id="add-note-form" action="/notes" method="POST">
+  <label>Note Name:</label>
+  <% if(folder) {%>
+  <input type="hidden" name="folder" value="<%= folder._id %>" />
+  <% } %>
+  <input type="text" name="title" /><br />
+  <input type="submit" value="Add Note" />
 </form>
 
 <%- include('../partials/footer') %>

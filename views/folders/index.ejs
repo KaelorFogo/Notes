@@ -1,22 +1,30 @@
 <%- include('../partials/header') %>
 <thead>
   <tr>
-    <th>
-      Folders
-    </th>
+    <th>Folders</th>
   </tr>
 </thead>
 <tbody>
   <button><a href="folders/new">+</a></button>
-  <%if(folder.length){%>
-  <% folder.forEach(function(m) { %>
-    <tr>
-      <br><td><a href="folders/<%= m._id %>"><%= m.title %></a></td>
-    </tr>
-    <% }); %>
-    <% } else { %>
-      <p>No Folders</p>
-      <% } %>
-  </tbody>
+  <%if(folder.length){%> <% folder.forEach(function(m) { %>
+  <tr>
+    <br />
+    <td><a href="folders/<%= m._id %>"><%= m.title %></a></td>
+  </tr>
+  <% }); %> <% } else { %>
+  <p>No Folders</p>
+  <% } %>
+</tbody>
+
+<%if(notes.length){%> <% notes.forEach(function(m) { %>
+<tr>
+  <br />
+  <td><a href="notes/<%= m._id %>"><%= m.title %></a></td>
+</tr>
+<% }); %> <% } else { %>
+<p>No Notes in this folder</p>
+<% } %>
+
+<button><a href="/notes/new">Add Note</a></button>
 
 <%- include('../partials/footer') %>

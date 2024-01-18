@@ -4,10 +4,10 @@
 </thead>
 
 <tbody>
-  <button><a href="../notes/new">+</a></button>
-  <%if(note.length){%>
+  <button><a href="/folders/<%= folder._id %>/notes/new">+</a></button>
+  <%if(notes.length){%>
 
-  <% note.forEach(function(m) { %>
+  <% notes.forEach(function(m) { %>
     <tr>
       <br><td><a href="notes/<%= m._id %>"><%= m.title %></a></td>
     </tr>
