@@ -1,4 +1,6 @@
 <%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+<div style="width: 70%;">
 <thead>
   <h1><%= folder.title %></h1>
 </thead>
@@ -9,12 +11,17 @@
 
   <% notes.forEach(function(m) { %>
     <tr>
-      <br><td><a href="notes/<%= m._id %>"><%= m.title %></a></td>
+      <br><td><a href="notes/<%= m._id %>"><%= m.header %></a></td>
     </tr>
+    <% if (user?._id.equals(m.user)) { %>
+      <form action="/notes/<%= m._id %>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+      </form>
+    <% } %>
     <% }); %>
     <% } else { %>
         <p>No Notes in this folder</p>
       <% } %>
   </tbody>
-
+</div>
 <%- include('../partials/footer') %>

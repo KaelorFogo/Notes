@@ -8,10 +8,6 @@ const folderSchemma = new Schema({
     ref: 'User',
     required: true
   },
-  // notes: [{
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'Note'
-  // }],
   userName: String
 });
 

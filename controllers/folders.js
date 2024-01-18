@@ -5,24 +5,46 @@ module.exports = {
   index,
   new: newFolder,
   show,
-  create
+  create,
+  delete: deleteFolder
 }
 
-function newFolder(req,res){
-  res.render('folders/new');
+async function deleteFolder(req, res) {
+  try {
+    const folder = await Folder.findOneAndDelete({
+      _id: req.params.id,
+      user: req.user._id
+    });
+    if (!folder) {
+      return res.redirect('/folders');
+    }
+    res.redirect('/folders');
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function newFolder(req,res){
+  const indexFolder = await Folder.find({});
+  const notes = await Note.find({});
+  const updatedNotes = notes.filter(n => !n.folder)
+  res.render('folders/new', {indexNotes:updatedNotes, indexFolder});
 }
 
 async function index(req, res){
-  const folder = await Folder.find({});
+  const indexFolder = await Folder.find({});
   const notes = await Note.find({});
   const updatedNotes = notes.filter(n => !n.folder)
-  res.render('folders/index', {folder, notes:updatedNotes});
+  res.render('folders/index', {indexFolder, indexNotes:updatedNotes});
 }
 
 async function show(req, res){
   const folder = await Folder.findById(req.params.id);
   const notes = await Note.find({folder:folder._id});
-  res.render('folders/show', {folder, notes});
+  const indexFolder = await Folder.find({});
+  const iNotes = await Note.find({});
+  const updatedNotes = iNotes.filter(n => !n.folder)
+  res.render('folders/show', {folder, notes, indexNotes:updatedNotes, indexFolder});
 }
 
 async function create(req, res){

@@ -1,10 +1,10 @@
-<%- include('../partials/header') %>
-<h1>New Folder</h1>
-
-<form id='new-form' action="/folders" method="POST">
-  <label>Folder Name:</label>
-  <input type="text" name="title"><br>
-  <input type="submit" value="Add Folder">
-</form>
-
+<%- include('../partials/header') %> 
+<%- include('../partials/sidebar') %>
+<div style="width: 70%;">
+  <form id="new-form" action="/folders" method="POST">
+    <label>Folder Name:</label>
+    <input id="new-folder-title" type="text" name="title" /><br />
+    <input id="submit-new-folder" type="submit" value="Add Folder" />
+  </form>
+</div>
 <%- include('../partials/footer') %>

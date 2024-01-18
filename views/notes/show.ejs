@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<%- include('../partials/sidebar') %>
+<div style="width: 70%;">
+
+<form id="note" action="/notes/<%= note._id %>?_method=PUT" method="POST">
+
+  <select name="folder" value="<%= note.folder %>">
+    <!-- Emit an option for each performer -->
+    <% folders.map(f => {%>
+      <option value="<%=f._id%>" <%= note.folder === f._id ? "selected" : "" %>><%=f.title%></option>
+    <% }) %>
+    <option value="null"<%= note.folder? "" : "selected" %>> </option>
+  </select>
+
+<input id="note-title" value="<%= note.header %>" type="text" name="header" placeholder="<%= note.header %>"><br>
+<textarea name="body" id="note-body" cols="30" rows="10" placeholder="<%= note.body %>"><%= note.body %></textarea><br>
+<button type="submit" id="note-Save">Save</button>
+
+</form>
+
+</div>
+
+<%- include('../partials/footer') %>

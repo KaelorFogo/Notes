@@ -1,0 +1,46 @@
+<div style="width: 300px;">
+<thead>
+  <a href="/folders">Home</a>
+  <tr>
+    <h1>Folders</h1>
+  </tr>
+</thead>
+<tbody>
+  <button><a href="/folders/new">Add Folder</a></button>
+  <%if(indexFolder.length){%> 
+    <% indexFolder.forEach(function(m) { %>
+  <% if (user?._id.equals(m.user)) { %>
+    <tr>
+      <br />
+      <td><a href="/folders/<%= m._id %>"><%= m.title %></a></td>
+    </tr>
+    <form action="/folders/<%= m._id %>?_method=DELETE" method="POST">
+      <button type="submit">X</button>
+    </form>
+  <% } %>
+  <% }); %> <% } else { %>
+  <p>No Folders</p><br>
+  <% } %>
+</tbody>
+
+<tbody>
+  <br>
+  <br>
+  <h1>Single Notes</h1>
+  <button><a href="/notes/new">Add Note</a></button>
+  <%if(indexNotes.length){%> <% indexNotes.forEach(function(m) { %>
+  <% if (user?._id.equals(m.user)) { %>
+    <tr>
+      <br />
+      <td><a href="notes/<%= m._id %>"><%= m.header %></a></td>
+    </tr>
+    <form action="/notes/<%= m._id %>?_method=DELETE" method="POST">
+      <button type="submit">X</button>
+    </form>
+  <% } %>
+  <% }); %> <% } else { %>
+  <p>No Notes in this folder</p>
+  <% } %>
+</tbody>
+
+</div>

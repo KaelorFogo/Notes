@@ -1,5 +1,179 @@
 nav{
 grid-area: nav;
-display: flex;
-justify-content: flex-end;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, sans-serif;
+  background-color: #b3e0f2; /* Light blue background color */
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button a, a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+button a:hover, a:hover {
+  background-color: #45a049;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+form {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+form button {
+  background-color: #e74c3c;
+}
+
+#note {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+#note {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+#note {
+  width: 100%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+#note textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none; 
+}
+
+#note-Save {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#note-Save:hover {
+  background-color: #45a049;
+}
+
+#note-Save:hover {
+  background-color: #45a049;
+}
+
+#add-note-form {
+  width: 90%;
+  margin: 0;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-note-header,
+#new-note-body {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#new-note-body {
+    resize: vertical; /* Allow vertical resizing of the textarea */
+}
+
+#new-form {
+  width: 90%;
+  margin: 0;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-folder-title {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#submit-new-folder {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#submit-new-folder:hover {
+  background-color: #45a049;
 }

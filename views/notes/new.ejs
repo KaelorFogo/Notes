@@ -1,14 +1,15 @@
 <%- include('../partials/header') %>
-
-<h1>New Notes</h1>
+<%- include('../partials/sidebar') %>
+<div style="width: 70%;">
 
 <form id="add-note-form" action="/notes" method="POST">
   <label>Note Name:</label>
   <% if(folder) {%>
   <input type="hidden" name="folder" value="<%= folder._id %>" />
   <% } %>
-  <input type="text" name="title" /><br />
-  <input type="submit" value="Add Note" />
+  <input id="new-note-header" type="text" name="header" /><br />
+  <textarea id="new-note-body" name="body" id="body" cols="30" rows="10"></textarea>  
+<input type="submit" value="Add Note" />
 </form>
-
+</div>
 <%- include('../partials/footer') %>
