@@ -7,7 +7,9 @@
   <select name="folder" value="<%= note.folder %>">
     <!-- Emit an option for each performer -->
     <% folders.map(f => {%>
-      <option value="<%=f._id%>" <%= note.folder === f._id ? "selected" : "" %>><%=f.title%></option>
+      <% if (user?._id.equals(f.user)) { %>
+      <option value="<%=f._id%>"<% note.folder == f._id ? "selected" : "" %>><%=f.title%> </option>
+      <% } %>
     <% }) %>
     <option value="null"<%= note.folder? "" : "selected" %>> </option>
   </select>

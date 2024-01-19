@@ -177,3 +177,40 @@ input[type="submit"]:hover {
 #submit-new-folder:hover {
   background-color: #45a049;
 }
+
+
+
+/* Assuming a class 'select-style' for the select element */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Styling for hover and focus states */
+select:hover,
+select:focus {
+  border-color: #4caf50;
+}
+
+/* Styling the dropdown arrow */
+select::after {
+  content: '\25BC'; /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Styling the options within the dropdown */
+select option {
+  background-color: #fff;
+  color: #333;
+}
