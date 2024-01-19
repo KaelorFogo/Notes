@@ -22,5 +22,5 @@ The all you need notes app. Your go-to place for organizing your thoughts.
 
 # Next Steps
 
-- Future enhancement one: Add Cmmpatibility to share folders/files to different users
+- Future enhancement one: Add Compatibility to share folders/files to different users
 - Future enhancement two: Add colors that the user can select to specific folders for organization 
