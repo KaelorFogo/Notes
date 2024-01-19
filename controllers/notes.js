@@ -39,7 +39,6 @@ async function update(req, res){
     );
     if(!folder) updatedNote.folder = undefined;
     await updatedNote.save();
-    console.log(updatedNote);
     if(folder) return res.redirect(`/folders/${folder._id}`);
     res.redirect('/folders');
   } catch (e) {
@@ -62,8 +61,6 @@ async function show(req, res){
     const indexFolder = await Folder.find({});
   const notes = await Note.find({});
   const updatedNotes = notes.filter(n => !n.folder)
-    console.log(note);
-    console.log(folders);
     res.render('notes/show', {note, folders, indexFolder, indexNotes:updatedNotes});
 }
 
