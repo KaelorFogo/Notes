@@ -17,8 +17,8 @@ The all you need notes app. Your go-to place for organizing your thoughts.
 
 # Getting Started
 
-[Click to View Project Planning] (https://trello.com/b/gJdggI6k/project-2)
-[Click to Open Notes!] (https://notes-0-4140bf57cb7a.herokuapp.com/)
+[Click to View Project Planning](https://trello.com/b/gJdggI6k/project-2)<br>
+[Click to Open Notes!](https://notes-0-4140bf57cb7a.herokuapp.com/)
 
 # Next Steps
 
